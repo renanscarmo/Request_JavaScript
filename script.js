@@ -4,11 +4,12 @@ function listaUsuarios(){
         console.log(response)
         return response.json();
     }).then((data) => {
-        console.log(data)/*Testa no console no inspecionar*/
-        let lista =  document.getElementById('lista');
+        
+        let lista = document.getElementById('lista');
         data.map((item) => {
+            console.log(item)
             lista.innerHTML += `<li>${item.name}</Li>`
         })
-    }).catch((error)=> error) 
+    })
 }
 listaUsuarios();
